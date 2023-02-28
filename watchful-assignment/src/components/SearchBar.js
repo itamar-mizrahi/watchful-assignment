@@ -5,7 +5,9 @@ import axios from "axios";
 const SearchBar = () => {
   const [query, setQuery] = useState("");
   const history = useHistory();
-  const handleSearch = async () => {
+
+  const handleSearch = async (e) => {
+    e.preventDefault();
     const response = await axios.get(`http://localhost:5000/search/${query}`);
     const data = response.data || [];
     history.push({
@@ -18,16 +20,16 @@ const SearchBar = () => {
     <>
       <div className="search-container">
         <h1> Search A Movie </h1>
-        <input
-          className="search-input"
-          type="text"
-          placeholder="search by title"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        <button className="search-button" onClick={handleSearch}>
-          Search
-        </button>
+        <form onSubmit={handleSearch}>
+          <input
+            className="search-input"
+            type="text"
+            placeholder="search by title"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <button className="search-button">Search</button>
+        </form>
       </div>
     </>
   );
