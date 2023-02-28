@@ -1,12 +1,5 @@
-import React, { useState, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Link,
-  Route,
-  Switch,
-  useHistory,
-} from "react-router-dom";
-import axios from "axios";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 
 import MovieDetails from "./components/MovieDetails";
