@@ -8,8 +8,6 @@ const SearchBar = () => {
   const handleSearch = async () => {
     const response = await axios.get(`http://localhost:5000/search/${query}`);
     const data = response.data || [];
-    console.log(query);
-    console.log(data);
     history.push({
       pathname: "/search",
       state: { data },
