@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-
+import searchImage from '../assets/searchImage.png'
 const SearchBar = () => {
   const [query, setQuery] = useState("");
   const history = useHistory();
@@ -30,6 +30,7 @@ const SearchBar = () => {
           />
           <button className="search-button">Search</button>
         </form>
+        <img  className="searchImage" src={searchImage} alt="image"/>
       </div>
     </>
   );
