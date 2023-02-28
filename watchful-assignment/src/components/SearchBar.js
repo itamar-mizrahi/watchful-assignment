@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
@@ -9,6 +10,7 @@ const SearchBar = () => {
   const handleSearch = async (e) => {
     e.preventDefault();
     const response = await axios.get(`http://localhost:5000/search/${query}`);
+    console.log(response);
     const data = response.data || [];
     history.push({
       pathname: "/search",
